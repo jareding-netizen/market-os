@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>广东市场经营简报｜CEO汇报版</title>
+<style>
+:root{
+  --bg:#f5f5f7;
+  --text:#1d1d1f;
+  --muted:#6e6e73;
+  --blue:#0071e3;
+  --card:rgba(255,255,255,.88);
+  --line:rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at top left,rgba(0,113,227,.08),transparent 28%),
+    linear-gradient(180deg,#fbfbfd 0%,#f5f5f7 100%);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+main{max-width:1180px;margin:auto;padding:14px}
+.panel{
+  min-height:calc(100svh - 28px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:64px;
+  margin-bottom:14px;
+  border-radius:32px;
+  background:var(--card);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 18px 60px rgba(0,0,0,.07);
+  opacity:0;
+  transform:translateY(24px);
+  animation:fadeUp .8s ease forwards;
+}
+.panel:nth-child(2){animation-delay:.08s}
+.panel:nth-child(3){animation-delay:.16s}
+.panel:nth-child(4){animation-delay:.24s}
+.panel:nth-child(5){animation-delay:.32s}
+.panel:nth-child(6){animation-delay:.40s}
+.panel:nth-child(7){animation-delay:.48s}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+.eyebrow{
+  color:var(--blue);
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.1em;
+  margin-bottom:18px;
+}
+h1{
+  font-size:clamp(54px,10vw,112px);
+  line-height:.98;
+  letter-spacing:-.06em;
+  margin:0 0 28px;
+  max-width:1000px;
+}
+h2{
+  font-size:clamp(40px,7vw,76px);
+  line-height:1.05;
+  letter-spacing:-.05em;
+  margin:0 0 24px;
+}
+.lead{
+  font-size:clamp(21px,3vw,32px);
+  line-height:1.45;
+  color:var(--muted);
+  max-width:900px;
+}
+.meta{margin-top:28px;color:var(--muted);font-size:15px}
+.hero-line{
+  font-size:clamp(34px,6vw,68px);
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing:-.045em;
+  max-width:960px;
+}
+.blue{color:var(--blue)}
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:28px;
+}
+.stat{
+  border-radius:28px;
+  padding:30px;
+  background:#f7f7f9;
+  border:1px solid var(--line);
+}
+.stat .label{font-size:16px;color:var(--muted);margin-bottom:12px}
+.stat .value{
+  font-size:clamp(58px,9vw,108px);
+  font-weight:800;
+  letter-spacing:-.06em;
+  line-height:.95;
+}
+.stat .note{margin-top:12px;color:var(--muted);font-size:15px}
+.route{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:28px;
+}
+.route .item{
+  min-height:220px;
+  border-radius:26px;
+  padding:26px;
+  background:linear-gradient(180deg,#fafafa,#f4f4f6);
+  border:1px solid var(--line);
+}
+.route .num{font-size:13px;font-weight:800;color:var(--blue);margin-bottom:14px}
+.route b{display:block;font-size:24px;line-height:1.2;margin-bottom:12px}
+.route p{margin:0;color:var(--muted);line-height:1.65}
+.city-wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;margin-top:26px}
+.city-list{
+  display:flex;flex-wrap:wrap;gap:12px;align-content:flex-start
+}
+.city{
+  background:#f7f7f9;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:12px 18px;
+  font-size:18px;
+  font-weight:700;
+}
+.side-card{
+  background:linear-gradient(135deg,#edf6ff,#f9fcff);
+  border:1px solid #d9ebff;
+  border-radius:26px;
+  padding:26px;
+}
+.side-card b{display:block;font-size:22px;margin-bottom:10px}
+.side-card p{margin:0;color:#35516e;line-height:1.65}
+.dark{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:#fff;
+}
+.dark .eyebrow{color:#8ecbff}
+.dark .lead{color:rgba(255,255,255,.72)}
+.dark .hero-line{color:#fff}
+.dark .blue{color:#8ecbff}
+.footer-note{margin-top:28px;font-size:14px;color:var(--muted)}
+@media(max-width:760px){
+  main{padding:8px}
+  .panel{
+    min-height:calc(100svh - 16px);
+    margin-bottom:8px;
+    border-radius:24px;
+    padding:32px 22px;
+  }
+  h1{font-size:54px}
+  h2{font-size:40px}
+  .lead{font-size:21px}
+  .stat-grid,.route,.city-wrap{grid-template-columns:1fr}
+  .route .item{min-height:auto}
+  .city{font-size:16px;padding:10px 14px}
+}
+</style>
+</head>
+<body>
+<main>
+
+<section class="panel">
+  <div class="eyebrow">广东市场经营简报 · CEO汇报版</div>
+  <h1>广东，<br>有没有真正进步？</h1>
+  <p class="lead">关注的不只是销量变化，而是广东在市场、组织和渠道上，是否形成了可持续增长能力。</p>
+  <div class="meta">2026年7月14日｜战略探讨（非指令）</div>
+</section>
+
+<section class="panel">
+  <div class="eyebrow">核心问题</div>
+  <div class="hero-line">广东人口和消费能力全国领先。<br><span class="blue">如果广东做不好，全国很难补回来。</span></div>
+</section>
+
+<section class="panel">
+  <div class="eyebrow">市场份额</div>
+  <h2>竞争格局基本稳定</h2>
+  <div class="stat-grid">
+    <div class="stat">
+      <div class="label">小天才｜2025年</div>
+      <div class="value">58%</div>
+    </div>
+    <div class="stat">
+      <div class="label">小天才｜2026年1—5月</div>
+      <div class="value">59%</div>
+      <div class="note">同比提升1个百分点</div>
+    </div>
+  </div>
+  <p class="lead">华为同期由22%升至23%。结论：广东的核心矛盾，不是份额被快速侵蚀。</p>
+</section>
+
+<section class="panel">
+  <div class="eyebrow">市场渗透率</div>
+  <h2>真正短板是市场没有做深</h2>
+  <div class="stat-grid">
+    <div class="stat">
+      <div class="label">广东Q2活跃渗透率</div>
+      <div class="value">18.6%</div>
+      <div class="note">同比 +3pct</div>
+    </div>
+    <div class="stat">
+      <div class="label">全国Q2活跃渗透率</div>
+      <div class="value">18.3%</div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="eyebrow">重点城市</div>
+  <h2>从核心城市到区域突破</h2>
+  <div class="city-wrap">
+    <div class="city-list">
+      <span class="city">广州</span>
+      <span class="city">东莞</span>
+      <span class="city">佛山</span>
+      <span class="city">惠州</span>
+      <span class="city">中山</span>
+      <span class="city">珠海</span>
+      <span class="city">揭阳</span>
+      <span class="city">潮汕</span>
+    </div>
+    <div class="side-card">
+      <b>珠海：高渗透样板</b>
+      <p>活跃渗透率28.9%，适合继续打造品牌标杆。</p>
+      <br>
+      <b>揭阳：粤东增量突破口</b>
+      <p>适龄人口约92万，具备较大的市场开发空间。</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="eyebrow">下一阶段方向</div>
+  <h2>三条主线同步推进</h2>
+  <div class="route">
+    <div class="item">
+      <div class="num">01</div>
+      <b>深化广州直营样板</b>
+      <p>做强品牌大店、核心商圈和直营能力，沉淀可复制方法。</p>
+    </div>
+    <div class="item">
+      <div class="num">02</div>
+      <b>恢复二级零售能力</b>
+      <p>在异动治理基础上，重新回到真实零售增长。</p>
+    </div>
+    <div class="item">
+      <div class="num">03</div>
+      <b>打开新增渠道</b>
+      <p>推进广东移动、电信及vivo、OPPO等渠道合作。</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel dark">
+  <div class="eyebrow">最终判断</div>
+  <div class="hero-line">广东最大的矛盾，<br>不是竞争，<br><span class="blue">而是渗透率。</span></div>
+  <p class="lead">最大的机会，不是单纯抢份额，而是把这个足够大的市场真正做深、做透。</p>
+  <div class="footer-note" style="color:rgba(255,255,255,.5)">下一步：通过半年度复盘，明确重点城市顺序、资源配置和可复制经营模式。</div>
+</section>
+
+</main>
+</body>
+</html>
